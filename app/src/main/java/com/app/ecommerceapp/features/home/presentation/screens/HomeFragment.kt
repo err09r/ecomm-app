@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.app.ecommerceapp.R
 import com.app.ecommerceapp.core.common.Constants.COLOR_DARK_BLUE
 import com.app.ecommerceapp.core.common.Constants.COLOR_ORANGE
-import com.app.ecommerceapp.core.common.Constants.ERROR_MSG
 import com.app.ecommerceapp.core.common.UiState
 import com.app.ecommerceapp.core.common.changeTextColor
 import com.app.ecommerceapp.core.common.hide
@@ -93,7 +92,7 @@ class HomeFragment : Fragment() {
                         is UiState.Error -> {
                             homeLayout.hide()
                             progressbarHome.root.hide()
-                            tvErrorHome.root.setError(message = ERROR_MSG)
+                            tvErrorHome.root.setError(message = getString(R.string.network_error))
                         }
                     }
                 }

@@ -2,6 +2,7 @@
     <string name="app_name">Ecommerce App</string>
 
     <string name="price_format">$%s</string>
+    <string name="network_error">Something went wrong.\nCheck your internet connection</string>
 
     <!-- Main screen. -->
     <string name="cart_title">Cart</string>

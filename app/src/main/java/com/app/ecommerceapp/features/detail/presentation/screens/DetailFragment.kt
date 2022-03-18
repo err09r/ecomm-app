@@ -21,7 +21,6 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.app.ecommerceapp.R
 import com.app.ecommerceapp.core.common.Constants.COLOR_WHITE_BACKGROUND
-import com.app.ecommerceapp.core.common.Constants.ERROR_MSG
 import com.app.ecommerceapp.core.common.UiState
 import com.app.ecommerceapp.core.common.changeNavigationBarColor
 import com.app.ecommerceapp.core.common.hide
@@ -82,7 +81,7 @@ class DetailFragment : Fragment() {
                         is UiState.Error -> {
                             progressbarDetail.root.hide()
                             detailLayout.hide()
-                            tvErrorDetail.root.setError(message = ERROR_MSG)
+                            tvErrorDetail.root.setError(message = getString(R.string.network_error))
                         }
                     }
                 }

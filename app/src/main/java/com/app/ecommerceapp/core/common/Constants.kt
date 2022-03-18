@@ -5,7 +5,6 @@ import com.app.ecommerceapp.R
 
 object Constants {
     const val UNKNOWN_HOST_EXCEPTION = "Unknown host"
-    const val ERROR_MSG = "Something went wrong.\nCheck your internet connection"
 
     @ColorRes
     const val COLOR_DARK_BLUE = R.color.dark_blue

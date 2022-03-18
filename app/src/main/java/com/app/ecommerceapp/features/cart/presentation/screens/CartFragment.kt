@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.ecommerceapp.R
 import com.app.ecommerceapp.core.common.Constants.COLOR_DARK_BLUE
-import com.app.ecommerceapp.core.common.Constants.ERROR_MSG
 import com.app.ecommerceapp.core.common.UiState
 import com.app.ecommerceapp.core.common.changeNavigationBarColor
 import com.app.ecommerceapp.core.common.hide
@@ -80,7 +79,7 @@ class CartFragment : Fragment() {
                         is UiState.Error -> {
                             progressbarCart.root.hide()
                             cartLayout.hide()
-                            tvErrorCart.root.setError(message = ERROR_MSG)
+                            tvErrorCart.root.setError(message = getString(R.string.network_error))
                         }
                     }
                 }
