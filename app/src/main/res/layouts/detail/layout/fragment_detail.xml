@@ -167,11 +167,8 @@
 
         <TextView
             android:id="@+id/tv_cpu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textColor="@color/gray2"
-            android:textSize="11sp"
+            style="@style/ShopTabTextStyle"
             app:layout_constraintEnd_toEndOf="@+id/iv_cpu"
             app:layout_constraintStart_toStartOf="@+id/iv_cpu"
             app:layout_constraintTop_toBottomOf="@+id/iv_cpu"
@@ -179,10 +176,7 @@
 
         <TextView
             android:id="@+id/tv_camera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray2"
-            android:textSize="11sp"
+            style="@style/ShopTabTextStyle"
             app:layout_constraintBottom_toBottomOf="@+id/tv_cpu"
             app:layout_constraintEnd_toEndOf="@+id/iv_camera"
             app:layout_constraintStart_toStartOf="@+id/iv_camera"
@@ -191,10 +185,7 @@
 
         <TextView
             android:id="@+id/tv_ram"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray2"
-            android:textSize="11sp"
+            style="@style/ShopTabTextStyle"
             app:layout_constraintBottom_toBottomOf="@+id/tv_camera"
             app:layout_constraintEnd_toEndOf="@+id/iv_ram"
             app:layout_constraintStart_toStartOf="@+id/iv_ram"
@@ -203,10 +194,7 @@
 
         <TextView
             android:id="@+id/tv_sd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray2"
-            android:textSize="11sp"
+            style="@style/ShopTabTextStyle"
             app:layout_constraintBottom_toBottomOf="@+id/tv_ram"
             app:layout_constraintEnd_toEndOf="@+id/iv_sd"
             app:layout_constraintStart_toStartOf="@+id/iv_sd"
