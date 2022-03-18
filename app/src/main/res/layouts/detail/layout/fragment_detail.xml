@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/appbar_detail"
+            layout="@layout/appbar_detail"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager_images"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="8dp"
+            android:paddingHorizontal="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_bottom_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar_detail"
+            tools:background="@drawable/ic_books">
+
+        </androidx.viewpager2.widget.ViewPager2>
+
+        <ImageView
+            android:id="@+id/iv_bottom_detail"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:background="@drawable/bottom_rounded_bg"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_item_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/dark_blue"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_bottom_detail"
+            tools:text="Galaxy Note 20 Ultra" />
+
+        <ImageButton
+            android:id="@+id/ib_fav_detail"
+            android:layout_width="@dimen/image_button"
+            android:layout_height="@dimen/image_button"
+            android:layout_marginEnd="36dp"
+            android:background="@drawable/square_blue_bg"
+            android:src="@drawable/ic_fav3"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_item_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_detail"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBar"
+            style="?ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/inner_gray"
+            android:progressTint="@color/golden"
+            android:secondaryProgressTint="@color/golden"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_detail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_detail"
+            tools:rating="4.5" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+            app:tabIndicator="@drawable/tab_indicator_rounded"
+            app:tabIndicatorColor="@color/orange"
+            app:tabIndicatorHeight="5dp"
+            app:tabMode="fixed"
+            app:tabPaddingTop="4dp"
+            app:tabSelectedTextColor="@color/dark_blue"
+            app:tabTextAppearance="@style/TabTextStyle"
+            app:tabTextColor="@color/gray3">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tabitem_shop" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tabitem_details" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tabitem_features" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <ImageView
+            android:id="@+id/iv_cpu"
+            android:layout_width="@dimen/iv_detail"
+            android:layout_height="@dimen/iv_detail"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_cpu"
+            app:layout_constraintEnd_toStartOf="@+id/iv_camera"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/iv_camera"
+            android:layout_width="@dimen/iv_detail"
+            android:layout_height="@dimen/iv_detail"
+            android:src="@drawable/ic_cam"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_cpu"
+            app:layout_constraintEnd_toStartOf="@+id/iv_ram"
+            app:layout_constraintStart_toEndOf="@+id/iv_cpu"
+            app:layout_constraintTop_toTopOf="@+id/iv_cpu"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/iv_ram"
+            android:layout_width="@dimen/iv_detail"
+            android:layout_height="@dimen/iv_detail"
+            android:src="@drawable/ic_ram"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_camera"
+            app:layout_constraintEnd_toStartOf="@+id/iv_sd"
+            app:layout_constraintStart_toEndOf="@+id/iv_camera"
+            app:layout_constraintTop_toTopOf="@+id/iv_camera"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/iv_sd"
+            android:layout_width="@dimen/iv_detail"
+            android:layout_height="@dimen/iv_detail"
+            android:src="@drawable/ic_sd"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_ram"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_ram"
+            app:layout_constraintTop_toTopOf="@+id/iv_ram"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_cpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/gray2"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_cpu"
+            app:layout_constraintStart_toStartOf="@+id/iv_cpu"
+            app:layout_constraintTop_toBottomOf="@+id/iv_cpu"
+            tools:text="Exynos 990" />
+
+        <TextView
+            android:id="@+id/tv_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray2"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_cpu"
+            app:layout_constraintEnd_toEndOf="@+id/iv_camera"
+            app:layout_constraintStart_toStartOf="@+id/iv_camera"
+            app:layout_constraintTop_toTopOf="@+id/tv_cpu"
+            tools:text="108 + 12 MP" />
+
+        <TextView
+            android:id="@+id/tv_ram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray2"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_camera"
+            app:layout_constraintEnd_toEndOf="@+id/iv_ram"
+            app:layout_constraintStart_toStartOf="@+id/iv_ram"
+            app:layout_constraintTop_toTopOf="@+id/tv_camera"
+            tools:text="8 GB" />
+
+        <TextView
+            android:id="@+id/tv_sd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray2"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ram"
+            app:layout_constraintEnd_toEndOf="@+id/iv_sd"
+            app:layout_constraintStart_toStartOf="@+id/iv_sd"
+            app:layout_constraintTop_toTopOf="@+id/tv_ram"
+            tools:text="256 GB" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/selector_header"
+            android:textColor="?colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cpu" />
+
+        <RadioGroup
+            android:id="@+id/radiogroup_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/btn_detail_add"
+            app:layout_constraintStart_toStartOf="@+id/textView19"
+            app:layout_constraintTop_toBottomOf="@+id/textView19">
+
+            <RadioButton
+                android:id="@+id/rb_color1"
+                style="@style/ColorRadioButtonStyle"
+                android:checked="true"
+                tools:ignore="RtlSymmetry" />
+
+            <RadioButton
+                android:id="@+id/rb_color2"
+                style="@style/ColorRadioButtonStyle"
+                tools:ignore="RtlSymmetry" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/radiogroup_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radiogroup_home"
+            app:layout_constraintTop_toTopOf="@+id/radiogroup_home">
+
+            <RadioButton
+                android:id="@+id/rb_capacity1"
+                style="@style/CapacityRadioButtonStyle"
+                android:checked="true"
+                tools:text="128 GB" />
+
+            <RadioButton
+                android:id="@+id/rb_capacity2"
+                style="@style/CapacityRadioButtonStyle"
+                tools:text="256 GB" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_detail_add"
+            style="@style/BottomButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/square_orange_bg"
+            android:paddingStart="36dp"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_bottom_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="RtlSymmetry"
+            tools:text="Add to cart             $1,500.00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/progressbar_detail"
+        layout="@layout/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+
+    <include
+        android:id="@+id/tv_error_detail"
+        layout="@layout/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+
+</FrameLayout>
