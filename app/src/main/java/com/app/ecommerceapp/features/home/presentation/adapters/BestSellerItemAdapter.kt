@@ -13,7 +13,7 @@ import com.app.ecommerceapp.features.home.domain.models.BestSellerItem
 import com.bumptech.glide.Glide
 
 class BestSellerItemAdapter(private val listener: (Int) -> Unit) :
-    ListAdapter<BestSellerItem, BestSellerItemViewHolder>(Differ) {
+    ListAdapter<BestSellerItem, BestSellerItemAdapter.BestSellerItemViewHolder>(Differ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestSellerItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -36,48 +36,48 @@ class BestSellerItemAdapter(private val listener: (Int) -> Unit) :
             return oldItem == newItem
         }
     }
-}
 
-class BestSellerItemViewHolder(
-    private val binding: ItemBestSellerBinding,
-    clickListener: (Int) -> Unit
-) : RecyclerView.ViewHolder(binding.root) {
+    class BestSellerItemViewHolder(
+        private val binding: ItemBestSellerBinding,
+        clickListener: (Int) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-    init {
-        binding.root.setOnClickListener {
-            clickListener(adapterPosition)
+        init {
+            binding.root.setOnClickListener {
+                clickListener(adapterPosition)
+            }
         }
-    }
 
-    fun bind(bestSeller: BestSellerItem) {
+        fun bind(bestSeller: BestSellerItem) {
 
-        with(binding) {
-            if (bestSeller.isFavorites) {
-                ibFav.setImageResource(R.drawable.ic_fav2_filled)
+            with(binding) {
+                if (bestSeller.isFavorites) {
+                    ibFav.setImageResource(R.drawable.ic_fav2_filled)
+                }
+                tvDetail.text = bestSeller.title
+                tvFinalPrice.apply {
+                    text = resources.getString(
+                        R.string.price_format,
+                        bestSeller.finalPrice.toSeparatedNumber()
+                    )
+                }
+                tvFullPrice.apply {
+                    text = resources.getString(
+                        R.string.price_format,
+                        bestSeller.fullPrice.toSeparatedNumber()
+                    )
+                    paintFlags = this.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+                }
+                setImage(bestSeller.src)
             }
-            tvDetail.text = bestSeller.title
-            tvFinalPrice.apply {
-                text = resources.getString(
-                    R.string.price_format,
-                    bestSeller.finalPrice.toSeparatedNumber()
-                )
-            }
-            tvFullPrice.apply {
-                text = resources.getString(
-                    R.string.price_format,
-                    bestSeller.fullPrice.toSeparatedNumber()
-                )
-                paintFlags = this.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-            }
-            setImage(bestSeller.src)
         }
-    }
 
-    private fun setImage(src: String) {
-        Glide
-            .with(binding.root.context)
-            .load(src)
-            .centerInside()
-            .into(binding.ivHomeContainer)
+        private fun setImage(src: String) {
+            Glide
+                .with(binding.root.context)
+                .load(src)
+                .centerInside()
+                .into(binding.ivHomeContainer)
+        }
     }
 }
