@@ -89,11 +89,6 @@ class DetailFragment : Fragment() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu.clear()
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -197,6 +192,7 @@ class DetailFragment : Fragment() {
                     if (state != ViewPager2.SCROLL_STATE_IDLE) {
                         return
                     }
+
                     when (currentItem) {
                         0 -> setCurrentItem(newListSize - 2, false)
                         newListSize - 1 -> setCurrentItem(1, false)
