@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.annotation.LayoutRes
 import com.app.ecommerceapp.R
 import com.app.ecommerceapp.databinding.FragmentFilterBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -38,42 +39,52 @@ class FilterFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        
         requireDialog().window?.attributes?.dimAmount = DIM_VALUE
+        initViews()
+    }
+    
+    private fun initViews() {
+        with(binding) {
 
-        binding.spinnerBrand.adapter = ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.brands,
-            R.layout.item_spinner
-        ).apply {
-            setDropDownViewResource(R.layout.item_spinner)
-        }
+            spinnerBrand.adapter = ArrayAdapter.createFromResource(
+                requireContext(),
+                R.array.brands,
+                SPINNER_ITEM
+            ).apply {
+                setDropDownViewResource(SPINNER_ITEM)
+            }
 
-        binding.spinnerPrice.adapter = ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.prices,
-            R.layout.item_spinner
-        ).apply {
-            setDropDownViewResource(R.layout.item_spinner)
-        }
+            spinnerPrice.adapter = ArrayAdapter.createFromResource(
+                requireContext(),
+                R.array.prices,
+                SPINNER_ITEM
+            ).apply {
+                setDropDownViewResource(SPINNER_ITEM)
+            }
 
-        binding.spinnerSize.adapter = ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.sizes,
-            R.layout.item_spinner
-        ).apply {
-            setDropDownViewResource(R.layout.item_spinner)
-        }
+            spinnerSize.adapter = ArrayAdapter.createFromResource(
+                requireContext(),
+                R.array.sizes,
+                SPINNER_ITEM
+            ).apply {
+                setDropDownViewResource(SPINNER_ITEM)
+            }
 
-        binding.btnFilterClose.setOnClickListener {
-            dialog?.dismiss()
-        }
+            btnFilterClose.setOnClickListener {
+                dialog?.dismiss()
+            }
 
-        binding.btnFilterDone.setOnClickListener {
-            dialog?.dismiss()
+            btnFilterDone.setOnClickListener {
+                dialog?.dismiss()
+            }
         }
     }
 
     private companion object {
         private const val DIM_VALUE = 0.0f
+        
+        @LayoutRes
+        private const val SPINNER_ITEM = R.layout.item_spinner
     }
 }
