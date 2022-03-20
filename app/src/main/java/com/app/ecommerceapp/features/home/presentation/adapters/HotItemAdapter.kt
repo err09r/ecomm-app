@@ -11,7 +11,7 @@ import com.app.ecommerceapp.features.home.domain.models.HotItem
 import com.bumptech.glide.Glide
 
 class HotItemAdapter(private val listener: (HotItem) -> Unit) :
-    ListAdapter<HotItem, HotItemViewHolder>(Differ) {
+    ListAdapter<HotItem, HotItemAdapter.HotItemViewHolder>(Differ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemHotSalesBinding.inflate(inflater, parent, false)
@@ -33,46 +33,46 @@ class HotItemAdapter(private val listener: (HotItem) -> Unit) :
             return oldItem == newItem
         }
     }
-}
 
-class HotItemViewHolder(
-    private val binding: ItemHotSalesBinding,
-    clickListener: (Int) -> Unit
-) : RecyclerView.ViewHolder(binding.root) {
+    class HotItemViewHolder(
+        private val binding: ItemHotSalesBinding,
+        clickListener: (Int) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-    init {
-        binding.root.setOnClickListener {
-            clickListener(adapterPosition)
+        init {
+            binding.root.setOnClickListener {
+                clickListener(adapterPosition)
+            }
         }
-    }
 
-    fun bind(hotItem: HotItem) {
-        with(binding) {
-            if (hotItem.isNew) {
-                tvNewLabel.show()
-            }
-            if (hotItem.isBuy) {
-                btnBuy.show()
-            }
+        fun bind(hotItem: HotItem) {
+            with(binding) {
+                if (hotItem.isNew) {
+                    tvNewLabel.show()
+                }
+                if (hotItem.isBuy) {
+                    btnBuy.show()
+                }
 
-            // Code below was implemented due to API image problems (text on images, bad image etc.)
-            if (hotItem.id == 1) {
-                tvTitle.text = hotItem.title
-                tvSubtitle.text = hotItem.subtitle
-            }
-            if (hotItem.id == 3) {
-                tvSubtitle.text = hotItem.subtitle
-            }
+                // Code below was implemented due to API image problems (text on images, bad image etc.)
+                if (hotItem.id == 1) {
+                    tvTitle.text = hotItem.title
+                    tvSubtitle.text = hotItem.subtitle
+                }
+                if (hotItem.id == 3) {
+                    tvSubtitle.text = hotItem.subtitle
+                }
 
+            }
+            setImage(hotItem.src)
         }
-        setImage(hotItem.src)
-    }
 
-    private fun setImage(src: String) {
-        Glide
-            .with(binding.root.context)
-            .load(src)
-            .centerCrop()
-            .into(binding.ivPicture)
+        private fun setImage(src: String) {
+            Glide
+                .with(binding.root.context)
+                .load(src)
+                .centerCrop()
+                .into(binding.ivPicture)
+        }
     }
 }
