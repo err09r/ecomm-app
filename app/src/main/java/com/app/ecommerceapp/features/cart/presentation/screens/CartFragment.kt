@@ -14,8 +14,8 @@ import com.app.ecommerceapp.core.common.Constants.COLOR_DARK_BLUE
 import com.app.ecommerceapp.core.common.UiState
 import com.app.ecommerceapp.core.common.changeNavigationBarColor
 import com.app.ecommerceapp.core.common.hide
-import com.app.ecommerceapp.core.common.show
 import com.app.ecommerceapp.core.common.setError
+import com.app.ecommerceapp.core.common.show
 import com.app.ecommerceapp.core.common.toSeparatedNumber
 import com.app.ecommerceapp.databinding.FragmentCartBinding
 import com.app.ecommerceapp.features.cart.presentation.adapters.CartItemAdapter
@@ -31,7 +31,7 @@ class CartFragment : Fragment() {
 
     private val cartViewModel: CartViewModel by viewModels()
 
-    private val cartAdapter = CartItemAdapter()
+    private val cartAdapter by lazy(LazyThreadSafetyMode.NONE) { CartItemAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
