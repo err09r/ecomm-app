@@ -36,14 +36,18 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModels()
 
-    private val hotItemAdapter = HotItemAdapter { clickedId ->
-        Log.d(TAG, "HotItem clicked: $clickedId")
-        findNavController().navigate(R.id.action_mainFragment_to_detailFragment)
+    private val hotItemAdapter by lazy(LazyThreadSafetyMode.NONE) {
+        HotItemAdapter { clickedId ->
+            Log.d(TAG, "HotItem clicked: $clickedId")
+            findNavController().navigate(R.id.action_mainFragment_to_detailFragment)
+        }
     }
 
-    private val bestSellerItemAdapter = BestSellerItemAdapter { clickedId ->
-        Log.d(TAG, "BestSeller clicked: $clickedId")
-        findNavController().navigate(R.id.action_mainFragment_to_detailFragment)
+    private val bestSellerItemAdapter by lazy(LazyThreadSafetyMode.NONE) {
+        BestSellerItemAdapter { clickedId ->
+            Log.d(TAG, "BestSeller clicked: $clickedId")
+            findNavController().navigate(R.id.action_mainFragment_to_detailFragment)
+        }
     }
 
     private var prevCheckedIndex = 0
@@ -111,23 +115,23 @@ class HomeFragment : Fragment() {
 
             when (buttonIndex) {
                 CATEGORY_PHONES_INDEX -> {
-                    changePreviousTextColor(prevCheckedIndex)
-                    binding.tvHomePhones.changeTextColor(COLOR_ORANGE)
+                    changePreviousTextColor(index = prevCheckedIndex)
+                    binding.tvHomePhones.changeTextColor(color = COLOR_ORANGE)
                     prevCheckedIndex = CATEGORY_PHONES_INDEX
                 }
                 CATEGORY_COMPUTER_INDEX -> {
-                    changePreviousTextColor(prevCheckedIndex)
-                    binding.tvHomeComputer.changeTextColor(COLOR_ORANGE)
+                    changePreviousTextColor(index = prevCheckedIndex)
+                    binding.tvHomeComputer.changeTextColor(color = COLOR_ORANGE)
                     prevCheckedIndex = CATEGORY_COMPUTER_INDEX
                 }
                 CATEGORY_HEALTH_INDEX -> {
-                    changePreviousTextColor(prevCheckedIndex)
-                    binding.tvHomeHealth.changeTextColor(COLOR_ORANGE)
+                    changePreviousTextColor(index = prevCheckedIndex)
+                    binding.tvHomeHealth.changeTextColor(color = COLOR_ORANGE)
                     prevCheckedIndex = CATEGORY_HEALTH_INDEX
                 }
                 CATEGORY_BOOKS_INDEX -> {
-                    changePreviousTextColor(prevCheckedIndex)
-                    binding.tvHomeBooks.changeTextColor(COLOR_ORANGE)
+                    changePreviousTextColor(index = prevCheckedIndex)
+                    binding.tvHomeBooks.changeTextColor(color = COLOR_ORANGE)
                     prevCheckedIndex = CATEGORY_BOOKS_INDEX
                 }
             }
