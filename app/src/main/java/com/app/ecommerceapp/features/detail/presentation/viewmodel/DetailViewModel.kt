@@ -22,7 +22,7 @@ class DetailViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            when (val result = getItemDetailsByIdUseCase.execute()) {
+            when (val result = getItemDetailsByIdUseCase()) {
                 is Resource.Success -> {
                     _uiState.emit(UiState.Success(result.data))
                 }

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class GetHomeContentByIdUseCase @Inject constructor(private val repository: HomeRepository) {
 
-    suspend fun execute(): Resource<List<HomeContent>> {
+    suspend operator fun invoke(): Resource<List<HomeContent>> {
         return repository.getHomeData()
     }
 }

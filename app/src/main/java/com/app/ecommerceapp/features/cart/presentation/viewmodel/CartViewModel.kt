@@ -22,7 +22,7 @@ class CartViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            when (val result = getCartContentByIdUseCase.execute()) {
+            when (val result = getCartContentByIdUseCase()) {
                 is Resource.Success -> {
                     _uiState.emit(UiState.Success(result.data))
                 }

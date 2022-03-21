@@ -22,7 +22,7 @@ class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            when (val result = getHomeContentByIdUseCase.execute()) {
+            when (val result = getHomeContentByIdUseCase()) {
                 is Resource.Success -> {
                     _uiState.emit(UiState.Success(result.data))
                 }

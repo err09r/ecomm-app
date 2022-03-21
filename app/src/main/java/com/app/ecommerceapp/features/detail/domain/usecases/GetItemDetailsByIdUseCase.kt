@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class GetItemDetailsByIdUseCase @Inject constructor(private val repository: DetailRepository) {
 
-    suspend fun execute(): Resource<List<DetailItem>> {
+    suspend operator fun invoke(): Resource<List<DetailItem>> {
         return repository.getItemsDetails()
     }
 }

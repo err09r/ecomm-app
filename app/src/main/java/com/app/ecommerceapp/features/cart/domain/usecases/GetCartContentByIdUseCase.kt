@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class GetCartContentByIdUseCase @Inject constructor(private val repository: CartRepository) {
 
-    suspend fun execute(): Resource<List<CartContent>> {
+    suspend operator fun invoke(): Resource<List<CartContent>> {
         return repository.getCartContent()
     }
 }
