@@ -2,5 +2,6 @@
 <resources>
     <dimen name="rb_detail_color">40dp</dimen>
     <dimen name="iv_detail">28dp</dimen>
+    <dimen name="iv_background_height">400dp</dimen>
 
 </resources>

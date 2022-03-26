@@ -8,5 +8,6 @@
     <dimen name="ib_small">34dp</dimen>
     <dimen name="image_button">37dp</dimen>
     <dimen name="progressbar_size">64dp</dimen>
+    <dimen name="appbar_margin_top">8dp</dimen>
 
 </resources>

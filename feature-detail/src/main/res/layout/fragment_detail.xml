@@ -15,7 +15,7 @@
             layout="@layout/appbar_detail"
             android:layout_width="0dp"
             android:layout_height="?actionBarSize"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/appbar_margin_top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
         <ImageView
             android:id="@+id/iv_bottom_detail"
             android:layout_width="0dp"
-            android:layout_height="400dp"
+            android:layout_height="@dimen/iv_background_height"
             android:background="@drawable/bottom_rounded_bg"
             android:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -181,6 +181,7 @@
             style="@style/ShopTabTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAllCaps="true"
             app:layout_constraintBottom_toBottomOf="@+id/tv_cpu"
             app:layout_constraintEnd_toEndOf="@+id/iv_camera"
             app:layout_constraintStart_toStartOf="@+id/iv_camera"

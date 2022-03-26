@@ -161,12 +161,14 @@
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/core/src/main/res/layout/item_spinner.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/core/src/main/res/layout/progressbar.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/core/src/main/res/layout/tv_error.xml" value="0.3359375" />
+        <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-cart/src/main/res/layout/appbar_cart.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-cart/src/main/res/layout/counter_view.xml" value="0.3359375" />
-        <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-cart/src/main/res/layout/fragment_cart.xml" value="0.1578125" />
+        <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-cart/src/main/res/layout/fragment_cart.xml" value="0.1" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-cart/src/main/res/layout/item_cart.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-detail/src/main/res/drawable/ic_arrow3.xml" value="0.2295" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-detail/src/main/res/drawable/ic_phone.xml" value="0.2295" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-detail/src/main/res/layout/fragment_detail.xml" value="0.33" />
+        <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-detail/src/main/res/layout/item_detail_image.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/drawable/ic_fav.xml" value="0.2295" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/drawable/ic_fav2.xml" value="0.2295" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/drawable/ic_filter.xml" value="0.2295" />
