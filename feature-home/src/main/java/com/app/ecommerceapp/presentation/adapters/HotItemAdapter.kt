@@ -1,21 +1,24 @@
-package com.app.ecommerceapp.features.home.presentation.adapters
+package com.app.ecommerceapp.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.app.ecommerceapp.core.common.show
-import com.app.ecommerceapp.databinding.ItemHotSalesBinding
-import com.app.ecommerceapp.features.home.domain.models.HotItem
-import com.bumptech.glide.Glide
+import com.app.ecommerceapp.domain.models.HotItem
+import com.app.ecommerceapp.extensions.show
+import com.app.feature_home.databinding.ItemHotSalesBinding
+import com.bumptech.glide.RequestManager
 
-class HotItemAdapter(private val listener: (HotItem) -> Unit) :
-    ListAdapter<HotItem, HotItemAdapter.HotItemViewHolder>(Differ) {
+class HotItemAdapter(
+    private val glideRequestManager: RequestManager,
+    private val listener: (HotItem) -> Unit
+) : ListAdapter<HotItem, HotItemAdapter.HotItemViewHolder>(Differ) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HotItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemHotSalesBinding.inflate(inflater, parent, false)
-        return HotItemViewHolder(binding) { pos ->
+        return HotItemViewHolder(glideRequestManager, binding) { pos ->
             getItem(pos)?.let { listener(it) }
         }
     }
@@ -35,6 +38,7 @@ class HotItemAdapter(private val listener: (HotItem) -> Unit) :
     }
 
     class HotItemViewHolder(
+        private val glideRequestManager: RequestManager,
         private val binding: ItemHotSalesBinding,
         clickListener: (Int) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -46,6 +50,7 @@ class HotItemAdapter(private val listener: (HotItem) -> Unit) :
         }
 
         fun bind(hotItem: HotItem) {
+
             with(binding) {
                 if (hotItem.isNew) {
                     tvNewLabel.show()
@@ -55,6 +60,7 @@ class HotItemAdapter(private val listener: (HotItem) -> Unit) :
                 }
 
                 // Code below was implemented due to API image problems (text on images, bad image etc.)
+                // Item with ID 2 already contains text, Item with ID 3 has bad picture
                 if (hotItem.id == 1) {
                     tvTitle.text = hotItem.title
                     tvSubtitle.text = hotItem.subtitle
@@ -63,16 +69,11 @@ class HotItemAdapter(private val listener: (HotItem) -> Unit) :
                     tvSubtitle.text = hotItem.subtitle
                 }
 
+                glideRequestManager
+                    .load(hotItem.src)
+                    .centerCrop()
+                    .into(ivPicture)
             }
-            setImage(hotItem.src)
-        }
-
-        private fun setImage(src: String) {
-            Glide
-                .with(binding.root.context)
-                .load(src)
-                .centerCrop()
-                .into(binding.ivPicture)
         }
     }
 }

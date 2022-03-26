@@ -1,13 +1,16 @@
-package com.app.ecommerceapp.features.detail.presentation.adapters
+package com.app.ecommerceapp.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.app.ecommerceapp.databinding.ItemDetailImageBinding
-import com.bumptech.glide.Glide
+import com.app.ecommerceapp.presentation.models.ImageItem
+import com.app.feature_detail.databinding.ItemDetailImageBinding
+import com.bumptech.glide.RequestManager
 
-class ImageDetailAdapter(originalList: List<ImageItem>) :
-    RecyclerView.Adapter<ImageDetailAdapter.ImageDetailViewHolder>() {
+class ImageDetailAdapter(
+    private val glideRequestManager: RequestManager,
+    originalList: List<ImageItem>
+) : RecyclerView.Adapter<ImageDetailAdapter.ImageDetailViewHolder>() {
 
     private val newList: List<ImageItem> =
         listOf(originalList.last()) + originalList + listOf(originalList.first())
@@ -15,7 +18,7 @@ class ImageDetailAdapter(originalList: List<ImageItem>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageDetailViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemDetailImageBinding.inflate(inflater, parent, false)
-        return ImageDetailViewHolder(binding)
+        return ImageDetailViewHolder(glideRequestManager, binding)
     }
 
     override fun onBindViewHolder(holder: ImageDetailViewHolder, position: Int) {
@@ -24,19 +27,16 @@ class ImageDetailAdapter(originalList: List<ImageItem>) :
 
     override fun getItemCount(): Int = newList.size
 
-    class ImageDetailViewHolder(private val binding: ItemDetailImageBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class ImageDetailViewHolder(
+        private val glideRequestManager: RequestManager,
+        private val binding: ItemDetailImageBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun setImage(src: String) {
-            Glide
-                .with(binding.root.context)
+            glideRequestManager
                 .load(src)
                 .fitCenter()
                 .into(binding.ivDetailContainer)
         }
     }
 }
-
-data class ImageItem(
-    val src: String
-)

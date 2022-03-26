@@ -1,22 +1,24 @@
-package com.app.ecommerceapp.features.cart.presentation.adapters
+package com.app.ecommerceapp.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.app.ecommerceapp.R
-import com.app.ecommerceapp.core.common.toStringWithFractionalPart
-import com.app.ecommerceapp.databinding.ItemCartBinding
-import com.app.ecommerceapp.features.cart.domain.models.CartItem
-import com.bumptech.glide.Glide
+import com.app.ecommerceapp.domain.models.CartItem
+import com.app.ecommerceapp.extensions.toStringWithFractionalPart
+import com.app.feature_cart.databinding.ItemCartBinding
+import com.bumptech.glide.RequestManager
+import com.app.core.R as CoreR
 
-class CartItemAdapter : ListAdapter<CartItem, CartItemAdapter.CartItemViewHolder>(Differ) {
+class CartItemAdapter(
+    private var glideRequestManager: RequestManager
+) : ListAdapter<CartItem, CartItemAdapter.CartItemViewHolder>(Differ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemCartBinding.inflate(inflater, parent, false)
-        return CartItemViewHolder(binding)
+        return CartItemViewHolder(glideRequestManager, binding)
     }
 
     override fun onBindViewHolder(holder: CartItemViewHolder, position: Int) {
@@ -33,27 +35,30 @@ class CartItemAdapter : ListAdapter<CartItem, CartItemAdapter.CartItemViewHolder
         }
     }
 
-    class CartItemViewHolder(private val binding: ItemCartBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class CartItemViewHolder(
+        private val glideRequestManager: RequestManager,
+        private val binding: ItemCartBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(cartItem: CartItem) {
+
             with(binding) {
                 tvItemPrice.text = binding.root.context.getString(
-                    R.string.price_format,
+                    CoreR.string.price_format,
                     cartItem.price.toStringWithFractionalPart()
                 )
                 tvItemTitle.text = cartItem.title
-                counterView.counterField.text = "2"
-            }
-            setImage(cartItem.src)
-        }
+                counterView.counterField.text = ITEM_COUNT
 
-        private fun setImage(src: String) {
-            Glide
-                .with(binding.root.context)
-                .load(src)
-                .centerCrop()
-                .into(binding.ivCartItem)
+                glideRequestManager
+                    .load(cartItem.src)
+                    .centerCrop()
+                    .into(ivCartItem)
+            }
         }
+    }
+
+    private companion object {
+        private const val ITEM_COUNT = "2"
     }
 }

@@ -1,4 +1,4 @@
-package com.app.ecommerceapp.features.home.presentation.adapters
+package com.app.ecommerceapp.presentation.adapters
 
 import android.graphics.Paint
 import android.view.LayoutInflater
@@ -6,19 +6,23 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.app.ecommerceapp.R
-import com.app.ecommerceapp.core.common.toSeparatedNumber
-import com.app.ecommerceapp.databinding.ItemBestSellerBinding
-import com.app.ecommerceapp.features.home.domain.models.BestSellerItem
-import com.bumptech.glide.Glide
+import com.app.ecommerceapp.domain.models.BestSellerItem
+import com.app.ecommerceapp.extensions.toSeparatedNumber
+import com.app.feature_home.R
+import com.app.feature_home.databinding.ItemBestSellerBinding
+import com.bumptech.glide.RequestManager
+import javax.inject.Inject
+import com.app.core.R as CoreR
 
-class BestSellerItemAdapter(private val listener: (Int) -> Unit) :
-    ListAdapter<BestSellerItem, BestSellerItemAdapter.BestSellerItemViewHolder>(Differ) {
+class BestSellerItemAdapter @Inject constructor(
+    private val glideRequestManager: RequestManager,
+    private val listener: (Int) -> Unit
+) : ListAdapter<BestSellerItem, BestSellerItemAdapter.BestSellerItemViewHolder>(Differ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestSellerItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemBestSellerBinding.inflate(inflater, parent, false)
-        return BestSellerItemViewHolder(binding) { pos ->
+        return BestSellerItemViewHolder(glideRequestManager, binding) { pos ->
             listener(pos)
         }
     }
@@ -38,6 +42,7 @@ class BestSellerItemAdapter(private val listener: (Int) -> Unit) :
     }
 
     class BestSellerItemViewHolder(
+        private val glideRequestManager: RequestManager,
         private val binding: ItemBestSellerBinding,
         clickListener: (Int) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -57,27 +62,23 @@ class BestSellerItemAdapter(private val listener: (Int) -> Unit) :
                 tvDetail.text = bestSeller.title
                 tvFinalPrice.apply {
                     text = resources.getString(
-                        R.string.price_format,
+                        CoreR.string.price_format,
                         bestSeller.finalPrice.toSeparatedNumber()
                     )
                 }
                 tvFullPrice.apply {
                     text = resources.getString(
-                        R.string.price_format,
+                        CoreR.string.price_format,
                         bestSeller.fullPrice.toSeparatedNumber()
                     )
                     paintFlags = this.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                 }
-                setImage(bestSeller.src)
-            }
-        }
 
-        private fun setImage(src: String) {
-            Glide
-                .with(binding.root.context)
-                .load(src)
-                .centerInside()
-                .into(binding.ivHomeContainer)
+                glideRequestManager
+                    .load(bestSeller.src)
+                    .centerInside()
+                    .into(ivHomeContainer)
+            }
         }
     }
 }
