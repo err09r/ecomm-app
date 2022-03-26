@@ -68,11 +68,6 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
-    // OkHttp
-    def okhttp_version = "5.0.0-alpha.6"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
-
     // Glide
     def glide_version = "4.13.1"
     implementation "com.github.bumptech.glide:glide:$glide_version"
