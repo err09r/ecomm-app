@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TabTextStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TabTextBoldStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CapacityRadioButtonStyle">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/selector_capacity</item>
+        <item name="android:button">@color/transparent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@drawable/selector_capacity_text</item>
+    </style>
+
+    <style name="ColorRadioButtonStyle">
+        <item name="android:layout_width">@dimen/rb_detail_color</item>
+        <item name="android:layout_height">@dimen/rb_detail_color</item>
+        <item name="android:button">@color/transparent</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">@drawable/circle_bg</item>
+        <item name="backgroundTint">@color/gray</item>
+        <item name="android:drawableEnd">@drawable/ic_tick</item>
+        <item name="android:paddingEnd">11dp</item>
+        <item name="drawableTint">@drawable/selector_detail_color</item>
+    </style>
+
+    <style name="ShopTabTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/gray2</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

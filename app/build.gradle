@@ -26,8 +26,7 @@ android {
     }
 
     buildTypes.each {
-        it.buildConfigField 'String', 'BASE_URL', "\"https://shopapi-0575.restdb.io\""
-        it.buildConfigField "String", "API_KEY", "\"61ddae2e95cb716ea5ee48e4\""
+        it.buildConfigField 'String', 'BASE_URL', "\"https://c7ae1634-c91d-4a58-8aa4-8aef21936a9d.mock.pstmn.io\""
     }
 
     compileOptions {
@@ -43,20 +42,14 @@ android {
         viewBinding true
     }
 
-    sourceSets {
-        main {
-            res {
-                srcDirs 'src\\main\\res',
-                        'src\\main\\res\\layouts\\home',
-                        'src\\main\\res\\layouts\\cart',
-                        'src\\main\\res\\layouts\\detail'
-            }
-        }
-    }
-
 }
 
 dependencies {
+
+    implementation project(path: ':feature-cart')
+    implementation project(path: ':feature-detail')
+    implementation project(path: ':feature-home')
+    implementation project(path: ':core')
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -67,11 +60,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
 
     // Splash screen
-    implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
-
-    // Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
 
     // Hilt
     def hilt_version = "2.41"
@@ -96,5 +85,5 @@ dependencies {
     // Glide
     def glide_version = "4.13.1"
     implementation "com.github.bumptech.glide:glide:$glide_version"
-    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
 }

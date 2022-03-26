@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appbar_detail">Product details</string>
+    <string name="tabitem_shop">Shop</string>
+    <string name="tabitem_details">Details</string>
+    <string name="tabitem_features">Features</string>
+    <string name="selector_header">Select color and capacity</string>
+    <string name="btn_detail_add">Add to Cart &#160;&#160;&#160;&#160;&#160;&#160; $%s</string>
+
+</resources>

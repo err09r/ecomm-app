@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="price_format">$%s</string>
+    <string name="network_error">Something went wrong.\nCheck your internet connection</string>
+
+</resources>
