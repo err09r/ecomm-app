@@ -36,8 +36,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 import kotlin.math.abs
-import com.app.navigation.R as NavR
 import com.app.core.R as CoreR
+import com.app.navigation.R as NavR
 
 private const val TAG = "DetailFragment"
 
@@ -182,14 +182,14 @@ class DetailFragment : Fragment() {
             val newListSize = imageList.size + 2
 
             adapter = ImageDetailAdapter(glideRequestManager, imageList)
-            offscreenPageLimit = 3
+            offscreenPageLimit = imageList.size
             clipToPadding = false
             clipChildren = false
             overScrollMode = RecyclerView.OVER_SCROLL_NEVER
             setCurrentItem(1, false)
 
             val pageTransformer = ViewPager2.PageTransformer { page, position ->
-                page.scaleY = (0.85f + (1 - abs(position)) * 0.15f)
+                page.scaleY = (NEIGHBOUR_PAGE_SCALE + (1 - abs(position)) * SCALE_MULTIPLIER)
             }
 
             val compositePageTransformer = CompositePageTransformer().apply {
@@ -224,5 +224,7 @@ class DetailFragment : Fragment() {
 
         @Px
         private const val PAGE_MARGIN = 30
+        private const val NEIGHBOUR_PAGE_SCALE = 0.85f
+        private const val SCALE_MULTIPLIER = 0.15f
     }
 }
