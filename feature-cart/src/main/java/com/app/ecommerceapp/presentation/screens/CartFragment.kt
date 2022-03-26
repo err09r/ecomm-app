@@ -86,7 +86,7 @@ class CartFragment : Fragment() {
                             cartAdapter.submitList(cartContent.cart)
                         }
                         is UiState.Error -> {
-                            progressbarCart.root.rootView.hide()
+                            progressbarCart.root.hide()
                             cartLayout.hide()
 
                             tvErrorCart.root.apply {
