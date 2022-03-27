@@ -4,7 +4,7 @@ import com.app.ecommerceapp.domain.models.DetailContent
 import com.app.ecommerceapp.domain.repository.DetailRepository
 import javax.inject.Inject
 
-class GetItemDetailsByIdUseCase @Inject constructor(private val repository: DetailRepository) {
+class GetDetailContentUseCase @Inject constructor(private val repository: DetailRepository) {
 
     suspend operator fun invoke(): DetailContent {
         return repository.getItemsDetails()
