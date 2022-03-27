@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="menu_icon_size">18dp</dimen>
+    <dimen name="bottom_nav_height">70dp</dimen>
+    <dimen name="iv_circle_size">8dp</dimen>
+</resources>

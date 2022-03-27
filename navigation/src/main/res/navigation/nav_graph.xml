@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -31,6 +32,7 @@
     <navigation
         android:id="@+id/home_nav_graph"
         app:startDestination="@id/homeFragment">
+
         <fragment
             android:id="@+id/homeFragment"
             android:name="com.app.ecommerceapp.presentation.screens.HomeFragment"
@@ -46,6 +48,7 @@
                 android:id="@+id/action_homeFragment_to_cartFragment"
                 app:destination="@id/cartFragment" />
         </fragment>
+
         <dialog
             android:id="@+id/filterFragment"
             android:name="com.app.ecommerceapp.presentation.screens.FilterFragment"
@@ -57,6 +60,7 @@
                 android:id="@+id/action_filterFragment_to_mainFragment"
                 app:destination="@id/homeFragment" />
         </dialog>
+
     </navigation>
 
 </navigation>

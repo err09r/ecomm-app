@@ -2,5 +2,13 @@
 <resources>
     <dimen name="rb_home">71dp</dimen>
     <dimen name="rb_home_margin">24dp</dimen>
-    
+    <dimen name="extra_text_margin_end">32dp</dimen>
+    <dimen name="bottom_padding">76dp</dimen>
+    <dimen name="best_seller_width">180dp</dimen>
+    <dimen name="ib_fav_size">25dp</dimen>
+    <dimen name="filter_height">375dp</dimen>
+    <dimen name="btn_buy_width">100dp</dimen>
+    <dimen name="tv_new_size">27dp</dimen>
+    <dimen name="hot_item_radius">15dp</dimen>
+
 </resources>

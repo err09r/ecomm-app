@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/appbar_detail"
-        android:textColor="?colorPrimary"
+        android:textColor="@color/dark_blue"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_back"
         app:layout_constraintEnd_toStartOf="@+id/btn_cart"

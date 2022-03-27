@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginVertical="8dp"
-            android:paddingHorizontal="48dp"
+            android:paddingHorizontal="@dimen/viewpager_padding"
             app:layout_constraintBottom_toTopOf="@+id/iv_bottom_detail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,9 +97,9 @@
             app:layout_constraintTop_toBottomOf="@+id/ratingBar"
             app:tabIndicator="@drawable/tab_indicator_rounded"
             app:tabIndicatorColor="@color/orange"
-            app:tabIndicatorHeight="5dp"
+            app:tabIndicatorHeight="@dimen/tabindicator_height"
             app:tabMode="fixed"
-            app:tabPaddingTop="4dp"
+            app:tabPaddingTop="@dimen/tab_padding_top"
             app:tabSelectedTextColor="@color/dark_blue"
             app:tabTextAppearance="@style/TabTextStyle"
             app:tabTextColor="@color/gray3">
@@ -223,7 +223,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_cpu" />
 
         <RadioGroup
-            android:id="@+id/radiogroup_home"
+            android:id="@+id/radiogroup_color"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -252,10 +252,10 @@
             android:layout_marginEnd="16dp"
             android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/radiogroup_home"
+            app:layout_constraintBottom_toBottomOf="@+id/radiogroup_color"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/radiogroup_home"
-            app:layout_constraintTop_toTopOf="@+id/radiogroup_home">
+            app:layout_constraintStart_toEndOf="@+id/radiogroup_color"
+            app:layout_constraintTop_toTopOf="@+id/radiogroup_color">
 
             <RadioButton
                 android:id="@+id/rb_capacity1"
@@ -274,7 +274,7 @@
             android:id="@+id/btn_detail_add"
             style="@style/BottomButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="54dp"
+            android:layout_height="@dimen/btn_bottom_height"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="24dp"

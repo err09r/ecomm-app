@@ -152,6 +152,7 @@
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.171" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.171" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/core/src/main/res/drawable/btn_carousel_bg.xml" value="0.2295" />
+        <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/core/src/main/res/drawable/circular_progressbar.xml" value="0.2295" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/core/src/main/res/drawable/selector_home_icon.xml" value="0.2295" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/core/src/main/res/drawable/square_blue_bg.xml" value="0.2295" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/core/src/main/res/drawable/square_orange_bg.xml" value="0.2295" />
@@ -167,6 +168,7 @@
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-cart/src/main/res/layout/item_cart.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-detail/src/main/res/drawable/ic_arrow3.xml" value="0.2295" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-detail/src/main/res/drawable/ic_phone.xml" value="0.2295" />
+        <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-detail/src/main/res/layout/appbar_detail.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-detail/src/main/res/layout/fragment_detail.xml" value="0.33" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-detail/src/main/res/layout/item_detail_image.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/drawable/ic_fav.xml" value="0.2295" />
@@ -180,6 +182,7 @@
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/drawable/spinner_bg.xml" value="0.2295" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/font/sf_pro.xml" value="0.37447916666666664" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/layout/appbar_main.xml" value="0.3359375" />
+        <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/layout/fragment_filter.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/layout/item_best_seller.xml" value="0.3359375" />
         <entry key="..\:/Users/Roma/AndroidStudioProjects/ecomm-app/feature-home/src/main/res/layout/item_hot_sales.xml" value="0.3359375" />

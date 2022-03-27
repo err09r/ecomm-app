@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center"
-    android:paddingHorizontal="8dp"
+    android:paddingHorizontal="@dimen/counter_view_padding_horizontal"
     android:background="@drawable/counter_bg">
 
     <ImageView
