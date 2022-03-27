@@ -14,7 +14,7 @@
         <Button
             android:id="@+id/btn_filter_done"
             style="@style/FilterDoneButtonStyle"
-            android:layout_width="86dp"
+            android:layout_width="@dimen/btn_done_width"
             android:layout_height="@dimen/image_button"
             android:layout_marginEnd="24dp"
             android:background="@drawable/square_orange_bg"
@@ -29,7 +29,7 @@
             style="@style/FilterCancelButtonStyle"
             android:layout_width="@dimen/image_button"
             android:layout_height="@dimen/image_button"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="@dimen/filter_button_margin"
             android:layout_marginTop="24dp"
             android:background="@drawable/square_blue_bg"
             android:src="@drawable/ic_cross"
