@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="radius_extra_large">50dp</dimen>
+    <dimen name="radius_large">30dp</dimen>
+    <dimen name="radius_medium">20dp</dimen>
+    <dimen name="radius_small">10dp</dimen>
+
+    <dimen name="ib_small">34dp</dimen>
+    <dimen name="image_button">37dp</dimen>
+    <dimen name="progressbar_size">64dp</dimen>
+    <dimen name="appbar_margin_top">8dp</dimen>
+    <dimen name="btn_bottom_height">54dp</dimen>
+
+</resources>

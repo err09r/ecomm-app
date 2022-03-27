@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_cart_size">85dp</dimen>
+    <dimen name="iv_item_cart_padding">4dp</dimen>
+    <dimen name="line_secondary_height">1dp</dimen>
+    <dimen name="line_primary_height">2dp</dimen>
+    <dimen name="counter_view_padding_horizontal">8dp</dimen>
+</resources>

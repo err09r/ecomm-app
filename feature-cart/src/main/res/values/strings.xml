@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cart_price_format">US $%s</string>
+    <string name="appbar_cart">Add address</string>
+    <string name="cart_header">My Cart</string>
+    <string name="cart_total">Total</string>
+    <string name="cart_delivery">Delivery</string>
+    <string name="cart_checkout">Checkout</string>
+
+</resources>

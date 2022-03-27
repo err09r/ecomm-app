@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/appbar_main"
+                layout="@layout/appbar_main" />
+
+            <TextView
+                android:id="@+id/textView10"
+                style="@style/ExtraTextStyle"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/extra_text_margin_end"
+                android:text="@string/see_more_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+            <TextView
+                android:id="@+id/textView8"
+                style="@style/ExtraTextStyle"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/extra_text_margin_end"
+                android:text="@string/see_more_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/HeaderTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/select_category_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appbar_main" />
+
+            <TextView
+                android:id="@+id/textView18"
+                style="@style/ExtraTextStyle"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/extra_text_margin_end"
+                android:text="@string/view_all_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                <RadioButton
+                    android:id="@+id/rb_phones"
+                    android:layout_width="@dimen/rb_home"
+                    android:layout_height="@dimen/rb_home"
+                    android:layout_marginEnd="@dimen/rb_home_margin"
+                    android:background="@drawable/circle_bg"
+                    android:backgroundTint="@drawable/selector_home"
+                    android:button="@color/transparent"
+                    android:checked="true"
+                    android:drawableEnd="@drawable/ic_phone"
+                    android:paddingEnd="26dp"
+                    app:drawableTint="@drawable/selector_home_icon"
+                    tools:ignore="RtlSymmetry" />
+
+                <RadioButton
+                    android:id="@+id/rb_computer"
+                    android:layout_width="@dimen/rb_home"
+                    android:layout_height="@dimen/rb_home"
+                    android:layout_marginEnd="@dimen/rb_home_margin"
+                    android:background="@drawable/circle_bg"
+                    android:backgroundTint="@drawable/selector_home"
+                    android:button="@color/transparent"
+                    android:drawableEnd="@drawable/ic_computer"
+                    android:paddingEnd="20dp"
+                    app:drawableTint="@drawable/selector_home_icon"
+                    tools:ignore="RtlSymmetry" />
+
+                <RadioButton
+                    android:id="@+id/rb_health"
+                    android:layout_width="@dimen/rb_home"
+                    android:layout_height="@dimen/rb_home"
+                    android:layout_marginEnd="@dimen/rb_home_margin"
+                    android:background="@drawable/circle_bg"
+                    android:backgroundTint="@drawable/selector_home"
+                    android:button="@color/transparent"
+                    android:drawableEnd="@drawable/ic_health"
+                    android:paddingEnd="19dp"
+                    app:drawableTint="@drawable/selector_home_icon"
+                    tools:ignore="RtlSymmetry" />
+
+                <RadioButton
+                    android:id="@+id/rb_books"
+                    android:layout_width="@dimen/rb_home"
+                    android:layout_height="@dimen/rb_home"
+                    android:background="@drawable/circle_bg"
+                    android:backgroundTint="@drawable/selector_home"
+                    android:button="@color/transparent"
+                    android:drawableEnd="@drawable/ic_books"
+                    android:paddingEnd="25dp"
+                    app:drawableTint="@drawable/selector_home_icon"
+                    tools:ignore="RtlSymmetry" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_home_phones"
+                style="@style/CategoryTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:text="@string/phones_text"
+                android:textColor="@color/orange"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/radiogroup_home"
+                app:layout_constraintTop_toBottomOf="@+id/radiogroup_home" />
+
+            <TextView
+                android:id="@+id/tv_home_computer"
+                style="@style/CategoryTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/computers_text"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_home_phones"
+                app:layout_constraintEnd_toStartOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/tv_home_phones" />
+
+            <TextView
+                android:id="@+id/tv_home_health"
+                style="@style/CategoryTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/health_text"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_home_computer"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintStart_toStartOf="@+id/guideline4"
+                app:layout_constraintTop_toTopOf="@+id/tv_home_computer" />
+
+            <TextView
+                android:id="@+id/tv_home_books"
+                style="@style/CategoryTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/books_text"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_home_health"
+                app:layout_constraintEnd_toEndOf="@+id/radiogroup_home"
+                app:layout_constraintStart_toStartOf="@+id/guideline9"
+                app:layout_constraintTop_toTopOf="@+id/tv_home_health" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="24dp"
+                android:hint="@string/search_hint"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingVertical="8dp"
+                android:paddingStart="24dp"
+                android:textColor="@color/dark_blue"
+                android:textColorHint="@color/inner_gray"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_phones"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="@dimen/ib_small"
+                android:layout_height="@dimen/ib_small"
+                android:layout_marginEnd="@dimen/extra_text_margin_end"
+                android:background="@drawable/circle_bg"
+                android:backgroundTint="@color/orange"
+                android:src="@drawable/ic_qrcode"
+                app:layout_constraintBottom_toBottomOf="@+id/editText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/HeaderTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/hot_sales_text"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager_hot_sales"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView9"
+                style="@style/HeaderTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/best_sellers_text"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/viewpager_hot_sales" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_best_sellers"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingBottom="@dimen/bottom_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/item_best_seller" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.26" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.74" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/progressbar_home"
+        layout="@layout/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+
+    <include
+        android:id="@+id/tv_error_home"
+        layout="@layout/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+
+</FrameLayout>
+

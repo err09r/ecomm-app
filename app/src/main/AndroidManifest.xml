@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.app.ecommerceapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.app.ecommerceapp.core.app.App"
+        android:name="com.app.ecommerceapp.app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,11 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EcommerceApp.Starting">
         <activity
-            android:name="com.app.ecommerceapp.features.home.presentation.screens.MainActivity"
+            android:name="com.app.ecommerceapp.activity.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.EcommerceApp.Starting"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

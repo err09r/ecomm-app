@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="radius_extra_large">50dp</dimen>
-    <dimen name="radius_large">30dp</dimen>
-    <dimen name="radius_medium">20dp</dimen>
-    <dimen name="radius_small">10dp</dimen>
-    <dimen name="ib_small">34dp</dimen>
-    <dimen name="rb_home">71dp</dimen>
-    <dimen name="rb_home_margin">24dp</dimen>
-    <dimen name="image_button">37dp</dimen>
-    <dimen name="rb_detail_color">40dp</dimen>
-    <dimen name="iv_detail">28dp</dimen>
+    <dimen name="menu_icon_size">18dp</dimen>
+    <dimen name="bottom_nav_height">70dp</dimen>
+    <dimen name="iv_circle_size">8dp</dimen>
 </resources>
