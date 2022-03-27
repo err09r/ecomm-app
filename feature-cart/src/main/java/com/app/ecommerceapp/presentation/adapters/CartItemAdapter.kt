@@ -45,10 +45,10 @@ class CartItemAdapter(
             with(binding) {
                 tvItemPrice.text = binding.root.context.getString(
                     CoreR.string.price_format,
-                    cartItem.price.toStringWithFractionalPart()
+                    (cartItem.price * cartItem.amount).toStringWithFractionalPart()
                 )
                 tvItemTitle.text = cartItem.title
-                counterView.counterField.text = ITEM_COUNT
+                counterView.counterField.text = cartItem.amount.toString()
 
                 glideRequestManager
                     .load(cartItem.src)
@@ -56,9 +56,5 @@ class CartItemAdapter(
                     .into(ivCartItem)
             }
         }
-    }
-
-    private companion object {
-        private const val ITEM_COUNT = "2"
     }
 }

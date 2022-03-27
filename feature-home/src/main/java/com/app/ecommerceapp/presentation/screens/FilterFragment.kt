@@ -40,7 +40,6 @@ class FilterFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         requireDialog().window?.attributes?.dimAmount = DIM_VALUE
         initViews()
     }
@@ -83,9 +82,9 @@ class FilterFragment : BottomSheetDialogFragment() {
     }
 
     private companion object {
-        private const val DIM_VALUE = 0.0f
-
         @LayoutRes
         private val SPINNER_ITEM = CoreR.layout.item_spinner
+
+        private const val DIM_VALUE = 0.0f
     }
 }

@@ -2,8 +2,9 @@ package com.app.ecommerceapp.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.app.ecommerceapp.constants.Constants.DEFAULT_ERROR_MSG
 import com.app.ecommerceapp.domain.models.HomeContent
-import com.app.ecommerceapp.domain.usecases.GetHomeContentByIdUseCase
+import com.app.ecommerceapp.domain.usecases.GetHomeContentUseCase
 import com.app.ecommerceapp.helpers.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -14,12 +15,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getHomeContentByIdUseCase: GetHomeContentByIdUseCase
+    private val getHomeContentUseCase: GetHomeContentUseCase
 ) : ViewModel() {
 
     private val handler: CoroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         throwable.printStackTrace()
-        _uiState.value = UiState.Error(error = throwable.message ?: "")
+        _uiState.value = UiState.Error(error = throwable.message ?: DEFAULT_ERROR_MSG)
     }
 
     private val _uiState = MutableStateFlow<UiState<HomeContent>>(UiState.Loading())
@@ -27,7 +28,7 @@ class HomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch(handler) {
-            val result = getHomeContentByIdUseCase()
+            val result = getHomeContentUseCase()
             _uiState.value = UiState.Success(content = result)
         }
     }

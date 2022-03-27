@@ -13,5 +13,8 @@ data class CartUnitDto(
     val price: Int,
 
     @SerializedName("title")
-    val title: String
+    val title: String,
+
+    @SerializedName("amount")
+    val amount: Int,
 )

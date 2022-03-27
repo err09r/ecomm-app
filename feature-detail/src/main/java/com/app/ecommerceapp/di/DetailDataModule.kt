@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal object DetailDataModule {
+object DetailDataModule {
 
     @Provides
     @Singleton

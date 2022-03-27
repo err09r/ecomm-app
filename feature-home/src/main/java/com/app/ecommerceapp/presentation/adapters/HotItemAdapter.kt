@@ -52,21 +52,14 @@ class HotItemAdapter(
         fun bind(hotItem: HotItem) {
 
             with(binding) {
+                tvTitle.text = hotItem.title
+                tvSubtitle.text = hotItem.subtitle
+
                 if (hotItem.isNew) {
                     tvNewLabel.show()
                 }
                 if (hotItem.isBuy) {
                     btnBuy.show()
-                }
-
-                // Code below was implemented due to API image problems (text on images, bad image etc.)
-                // Item with ID 2 already contains text, Item with ID 3 has bad picture
-                if (hotItem.id == 1) {
-                    tvTitle.text = hotItem.title
-                    tvSubtitle.text = hotItem.subtitle
-                }
-                if (hotItem.id == 3) {
-                    tvSubtitle.text = hotItem.subtitle
                 }
 
                 glideRequestManager

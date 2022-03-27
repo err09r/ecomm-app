@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.IntRange
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -27,8 +28,8 @@ import com.bumptech.glide.RequestManager
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
-import com.app.navigation.R as NavR
 import com.app.core.R as CoreR
+import com.app.navigation.R as NavR
 
 private const val TAG = "HomeFragment"
 
@@ -57,6 +58,7 @@ class HomeFragment : Fragment() {
         }
     }
 
+    @IntRange(from = 0, to = LAST_CATEGORY_INDEX)
     private var prevCheckedIndex = 0
 
     override fun onCreateView(
@@ -79,7 +81,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.recyclerviewBestSellers.apply {
-            layoutManager = GridLayoutManager(requireContext(), 2)
+            layoutManager = GridLayoutManager(requireContext(), SPAN_COUNT)
             adapter = bestSellerItemAdapter
         }
 
@@ -124,8 +126,8 @@ class HomeFragment : Fragment() {
 
     private fun initListeners() {
         binding.radiogroupHome.setOnCheckedChangeListener { radioGroup, buttonId ->
-            val buttonIndex = radioGroup.indexOfChild(view?.findViewById(buttonId))
 
+            val buttonIndex = radioGroup.indexOfChild(view?.findViewById(buttonId))
             when (buttonIndex) {
                 CATEGORY_PHONES_INDEX -> {
                     changePreviousTextColor(index = prevCheckedIndex)
@@ -178,5 +180,7 @@ class HomeFragment : Fragment() {
         private const val CATEGORY_COMPUTER_INDEX = 1
         private const val CATEGORY_HEALTH_INDEX = 2
         private const val CATEGORY_BOOKS_INDEX = 3
+        private const val LAST_CATEGORY_INDEX = 3L
+        private const val SPAN_COUNT = 2
     }
 }

@@ -12,7 +12,8 @@ object CartUnitMapper : CartMapper<CartUnitDto, CartItem> {
                 id = id,
                 src = src,
                 price = price,
-                title = title
+                title = title,
+                amount = amount
             )
         }
     }

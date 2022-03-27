@@ -11,10 +11,10 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal object HomeDataModule {
+object HomeDataModule {
 
-    @Provides
     @Singleton
+    @Provides
     fun provideHomeRepository(api: ShopHomeApi): HomeRepository {
         return HomeRepositoryImpl(api)
     }

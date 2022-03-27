@@ -10,7 +10,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal object DetailDomainModule {
+object DetailDomainModule {
 
     @Singleton
     @Provides
