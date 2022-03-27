@@ -26,7 +26,7 @@ android {
     }
 
     buildTypes.each {
-        it.buildConfigField 'String', 'BASE_URL', "\"https://c7ae1634-c91d-4a58-8aa4-8aef21936a9d.mock.pstmn.io\""
+        it.buildConfigField 'String', 'BASE_URL', "\"https://0709633b-870f-454a-8652-ecc6cdf8d43a.mock.pstmn.io\""
     }
 
     compileOptions {
@@ -63,27 +63,23 @@ dependencies {
     implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
 
     // Hilt
-    def hilt_version = "2.41"
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     // Navigation
-    def nav_version = "2.4.1"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     // Retrofit
-    def retrofit_version = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
     // OkHttp
-    def okhttp_version = "5.0.0-alpha.6"
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
     // Glide
-    def glide_version = "4.13.1"
     implementation "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
+
 }
