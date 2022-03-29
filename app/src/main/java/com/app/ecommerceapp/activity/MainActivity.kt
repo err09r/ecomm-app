@@ -12,11 +12,11 @@ import androidx.navigation.fragment.NavHostFragment
 import com.app.ecommerceapp.constants.ResourceConstants.COLOR_DARK_BLUE
 import com.app.ecommerceapp.constants.ResourceConstants.COLOR_ORANGE
 import com.app.ecommerceapp.constants.ResourceConstants.COLOR_WHITE_BACKGROUND
-import com.app.feature_home.R as CoreR
-import com.app.navigation.R as NavR
 import com.app.ecommerceapp.databinding.ActivityMainBinding
 import com.app.ecommerceapp.extensions.changeNavigationBarColor
 import dagger.hilt.android.AndroidEntryPoint
+import com.app.feature_home.R as CoreR
+import com.app.navigation.R as NavR
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

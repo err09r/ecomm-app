@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_detailFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
+        <deepLink
+            android:id="@+id/deepLink4"
+            app:uri="mysite.com/detail" />
     </fragment>
 
     <fragment
@@ -26,6 +29,9 @@
         <action
             android:id="@+id/action_cartFragment_to_homeFragment"
             app:destination="@id/home_nav_graph" />
+        <deepLink
+            android:id="@+id/deepLink3"
+            app:uri="mysite.com/cart" />
     </fragment>
 
     <navigation
@@ -53,6 +59,9 @@
                 app:exitAnim="@anim/slide_out_up"
                 app:popEnterAnim="@anim/slide_in_up"
                 app:popExitAnim="@anim/slide_out_up" />
+            <deepLink
+                android:id="@+id/deepLink"
+                app:uri="mysite.com/home" />
         </fragment>
 
         <dialog
@@ -77,6 +86,9 @@
                 app:exitAnim="@anim/slide_out_up"
                 app:popEnterAnim="@anim/slide_in_up"
                 app:popExitAnim="@anim/slide_out_up" />
+            <deepLink
+                android:id="@+id/deepLink2"
+                app:uri="mysite.com/map" />
         </fragment>
 
     </navigation>
