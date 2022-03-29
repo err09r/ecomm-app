@@ -18,7 +18,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/api_key" />
+            android:value="" />
 
         <activity
             android:name="com.app.ecommerceapp.activity.MainActivity"
