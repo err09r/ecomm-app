@@ -15,36 +15,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/transparent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView15"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toTopOf="@+id/textView15"
-        app:srcCompat="@drawable/ic_downarrow"
-        tools:ignore="ContentDescription" />
-
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/tv_location"
         style="@style/ToolbarTextStyle"
+        android:drawablePadding="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/location"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:drawableEndCompat="@drawable/ic_downarrow" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView15"
-        app:layout_constraintEnd_toStartOf="@+id/textView15"
-        app:layout_constraintTop_toTopOf="@+id/textView15"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_location"
+        app:layout_constraintEnd_toStartOf="@+id/tv_location"
+        app:layout_constraintTop_toTopOf="@+id/tv_location"
         app:srcCompat="@drawable/ic_location"
         tools:ignore="ContentDescription" />
 

@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private companion object {
-        private const val BADGE_COUNT = 4
+        private const val BADGE_COUNT = 3
         private const val HOME_FRAGMENT_LABEL = "HomeFragment"
     }
 }

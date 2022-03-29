@@ -8,18 +8,23 @@
     <string name="location">Warsaw, Poland</string>
     <string name="explorer_text">Explorer</string>
     <string name="see_more_text">see more</string>
-    <string name="select_category_text">Select category</string>
+    <string name="select_category_text">Select Category</string>
     <string name="view_all_text">view all</string>
     <string name="phones_text">Phones</string>
     <string name="computers_text">Computers</string>
     <string name="health_text">Health</string>
     <string name="books_text">Books</string>
     <string name="search_hint">Search</string>
-    <string name="hot_sales_text">Hot sales</string>
-    <string name="best_sellers_text">Best sellers</string>
+    <string name="hot_sales_text">Hot Sales</string>
+    <string name="best_sellers_text">Best Sellers</string>
     <string name="filter_title">Filter</string>
     <string name="new_item">New</string>
     <string name="buy_now_text">Buy now!</string>
+
+    <!-- Map screen.-->
+    <string name="appbar_map_text">Store Location</string>
+    <string name="location_disabled_text">Location is disabled.\nPlease enable location in settings</string>
+    <string name="location_denied_text">Can\'t get location.\nEnable permissions in app settings</string>
 
     <!-- Filter screen. -->
     <string name="btn_done">Done</string>
