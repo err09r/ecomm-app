@@ -18,7 +18,15 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="" />
+            android:value="AIzaSyCpmfDo6lY97l9mjn5BCXcsABiXewGsVx8" />
+
+        <service
+            android:name="com.app.ecommerceapp.firebase.FirebaseService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
         <activity
             android:name="com.app.ecommerceapp.activity.MainActivity"
