@@ -6,7 +6,6 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,10 +27,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.MarkerOptions
 import com.app.navigation.R as NavR
-
-private const val TAG = "MapFragment"
 
 class MapFragment : Fragment(), OnMapReadyCallback {
 
@@ -53,14 +51,10 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         resultLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) { permissions ->
-            permissions.entries.forEach {
-                Log.d(TAG, "Permission: ${it.key}, is granted ${it.value}")
-                if (it.value == true) {
-                    return@registerForActivityResult
-                }
+            if (!permissions.containsValue(true)) {
+                Toast.makeText(requireContext(), R.string.location_denied_text, Toast.LENGTH_LONG)
+                    .show()
             }
-            Toast.makeText(requireContext(), R.string.location_denied_text, Toast.LENGTH_LONG)
-                .show()
         }
     }
 
@@ -137,6 +131,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         this.map = map.apply {
             generateMarkers(shops)
 
+            setMapStyle(MapStyleOptions.loadRawResourceStyle(requireContext(), R.raw.map_style))
             uiSettings.apply {
                 isMyLocationButtonEnabled = false
                 isMapToolbarEnabled = false
