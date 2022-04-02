@@ -11,10 +11,9 @@ import com.app.ecommerceapp.util.extensions.toSeparatedNumber
 import com.app.feature_home.R
 import com.app.feature_home.databinding.ItemBestSellerBinding
 import com.bumptech.glide.RequestManager
-import javax.inject.Inject
 import com.app.core.R as CoreR
 
-class BestSellerItemAdapter @Inject constructor(
+class BestSellerItemAdapter(
     private val glideRequestManager: RequestManager,
     private val listener: (Int) -> Unit
 ) : ListAdapter<BestSellerItem, BestSellerItemAdapter.BestSellerItemViewHolder>(Differ) {
