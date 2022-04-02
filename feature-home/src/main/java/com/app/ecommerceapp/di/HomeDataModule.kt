@@ -15,6 +15,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
@@ -45,4 +46,10 @@ object HomeDataModule {
     @Singleton
     @Provides
     fun provideHomeDao(database: HomeDatabase): HomeDao = database.homeDao()
+
+    @Singleton
+    @Provides
+    fun provideShopHomeApi(retrofit: Retrofit): ShopHomeApi {
+        return retrofit.create(ShopHomeApi::class.java)
+    }
 }
