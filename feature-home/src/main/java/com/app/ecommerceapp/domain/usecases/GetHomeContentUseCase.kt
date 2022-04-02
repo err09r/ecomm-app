@@ -7,6 +7,6 @@ import javax.inject.Inject
 class GetHomeContentUseCase @Inject constructor(private val repository: HomeRepository) {
 
     suspend operator fun invoke(): HomeContent {
-        return repository.getHomeData()
+        return repository.getHomeContent()
     }
 }

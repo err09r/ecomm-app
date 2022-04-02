@@ -15,9 +15,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.app.ecommerceapp.constants.ResourceConstants.COLOR_DARK_BLUE
-import com.app.ecommerceapp.extensions.changeNavigationBarColor
-import com.app.ecommerceapp.extensions.reloadFragment
+import com.app.ecommerceapp.util.constants.ResourceConstants.COLOR_DARK_BLUE
+import com.app.ecommerceapp.util.extensions.changeNavigationBarColor
+import com.app.ecommerceapp.util.extensions.reloadFragment
 import com.app.feature_home.R
 import com.app.feature_home.databinding.FragmentMapBinding
 import com.google.android.gms.location.LocationServices

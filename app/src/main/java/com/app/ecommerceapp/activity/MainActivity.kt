@@ -9,11 +9,11 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.app.ecommerceapp.constants.ResourceConstants.COLOR_DARK_BLUE
-import com.app.ecommerceapp.constants.ResourceConstants.COLOR_ORANGE
-import com.app.ecommerceapp.constants.ResourceConstants.COLOR_WHITE_BACKGROUND
+import com.app.ecommerceapp.util.constants.ResourceConstants.COLOR_DARK_BLUE
+import com.app.ecommerceapp.util.constants.ResourceConstants.COLOR_ORANGE
+import com.app.ecommerceapp.util.constants.ResourceConstants.COLOR_WHITE_BACKGROUND
 import com.app.ecommerceapp.databinding.ActivityMainBinding
-import com.app.ecommerceapp.extensions.changeNavigationBarColor
+import com.app.ecommerceapp.util.extensions.changeNavigationBarColor
 import com.app.ecommerceapp.firebase.DESTINATION_KEY
 import dagger.hilt.android.AndroidEntryPoint
 import com.app.feature_home.R as CoreR

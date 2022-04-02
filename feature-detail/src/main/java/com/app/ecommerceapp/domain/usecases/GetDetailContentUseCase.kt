@@ -7,6 +7,6 @@ import javax.inject.Inject
 class GetDetailContentUseCase @Inject constructor(private val repository: DetailRepository) {
 
     suspend operator fun invoke(): DetailContent {
-        return repository.getItemsDetails()
+        return repository.getDetailContent()
     }
 }

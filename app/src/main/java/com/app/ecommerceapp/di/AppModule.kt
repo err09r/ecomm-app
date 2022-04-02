@@ -3,6 +3,7 @@ package com.app.ecommerceapp.di
 import android.content.Context
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,9 +15,13 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    @Provides
     @Singleton
+    @Provides
     fun provideGlide(@ApplicationContext context: Context): RequestManager {
         return Glide.with(context)
     }
+
+    @Singleton
+    @Provides
+    fun provideGson(): Gson = Gson()
 }

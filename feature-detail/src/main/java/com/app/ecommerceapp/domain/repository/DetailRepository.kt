@@ -4,5 +4,5 @@ import com.app.ecommerceapp.domain.models.DetailContent
 
 interface DetailRepository {
 
-    suspend fun getItemsDetails(): DetailContent
+    suspend fun getDetailContent(): DetailContent
 }

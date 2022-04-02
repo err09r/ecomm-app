@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.ecommerceapp.domain.models.CartItem
-import com.app.ecommerceapp.extensions.toStringWithFractionalPart
+import com.app.ecommerceapp.util.extensions.toStringWithFractionalPart
 import com.app.feature_cart.databinding.ItemCartBinding
 import com.bumptech.glide.RequestManager
 import com.app.core.R as CoreR
