@@ -14,6 +14,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
@@ -44,4 +45,10 @@ object CartDataModule {
     @Singleton
     @Provides
     fun provideCartDao(database: CartDatabase): CartDao = database.cartDao()
+
+    @Singleton
+    @Provides
+    fun provideShopCartApi(retrofit: Retrofit): ShopCartApi {
+        return retrofit.create(ShopCartApi::class.java)
+    }
 }
