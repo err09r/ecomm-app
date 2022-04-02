@@ -1,6 +1,6 @@
 package com.app.ecommerceapp.di
 
-import com.app.ecommerceapp.data.api.ShopHomeApi
+import com.app.ecommerceapp.data.remote.api.ShopHomeApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

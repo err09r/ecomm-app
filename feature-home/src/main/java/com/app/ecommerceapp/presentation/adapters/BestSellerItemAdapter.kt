@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.ecommerceapp.domain.models.BestSellerItem
-import com.app.ecommerceapp.extensions.toSeparatedNumber
+import com.app.ecommerceapp.util.extensions.toSeparatedNumber
 import com.app.feature_home.R
 import com.app.feature_home.databinding.ItemBestSellerBinding
 import com.bumptech.glide.RequestManager

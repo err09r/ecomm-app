@@ -4,5 +4,5 @@ import com.app.ecommerceapp.domain.models.HomeContent
 
 interface HomeRepository {
 
-    suspend fun getHomeData(): HomeContent
+    suspend fun getHomeContent(): HomeContent
 }

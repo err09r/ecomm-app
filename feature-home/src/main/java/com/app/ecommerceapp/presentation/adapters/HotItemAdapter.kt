@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.ecommerceapp.domain.models.HotItem
-import com.app.ecommerceapp.extensions.show
+import com.app.ecommerceapp.util.extensions.show
 import com.app.feature_home.databinding.ItemHotSalesBinding
 import com.bumptech.glide.RequestManager
 

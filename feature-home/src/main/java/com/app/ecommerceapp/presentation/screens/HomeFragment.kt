@@ -14,12 +14,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.app.ecommerceapp.constants.ResourceConstants.COLOR_DARK_BLUE
-import com.app.ecommerceapp.constants.ResourceConstants.COLOR_ORANGE
-import com.app.ecommerceapp.extensions.changeTextColor
-import com.app.ecommerceapp.extensions.hide
-import com.app.ecommerceapp.extensions.show
-import com.app.ecommerceapp.helpers.UiState
+import com.app.ecommerceapp.util.constants.ResourceConstants.COLOR_DARK_BLUE
+import com.app.ecommerceapp.util.constants.ResourceConstants.COLOR_ORANGE
+import com.app.ecommerceapp.util.extensions.changeTextColor
+import com.app.ecommerceapp.util.extensions.hide
+import com.app.ecommerceapp.util.extensions.show
+import com.app.ecommerceapp.util.helpers.UiState
 import com.app.ecommerceapp.presentation.adapters.BestSellerItemAdapter
 import com.app.ecommerceapp.presentation.adapters.HotItemAdapter
 import com.app.ecommerceapp.presentation.viewmodel.HomeViewModel
@@ -125,32 +125,40 @@ class HomeFragment : Fragment() {
     }
 
     private fun initListeners() {
-        binding.radiogroupHome.setOnCheckedChangeListener { radioGroup, buttonId ->
+        with(binding) {
 
-            val buttonIndex = radioGroup.indexOfChild(view?.findViewById(buttonId))
-            when (buttonIndex) {
-                CATEGORY_PHONES_INDEX -> {
-                    changePreviousTextColor(index = prevCheckedIndex)
-                    binding.tvHomePhones.changeTextColor(color = COLOR_ORANGE)
-                    prevCheckedIndex = CATEGORY_PHONES_INDEX
-                }
-                CATEGORY_COMPUTER_INDEX -> {
-                    changePreviousTextColor(index = prevCheckedIndex)
-                    binding.tvHomeComputer.changeTextColor(color = COLOR_ORANGE)
-                    prevCheckedIndex = CATEGORY_COMPUTER_INDEX
-                }
-                CATEGORY_HEALTH_INDEX -> {
-                    changePreviousTextColor(index = prevCheckedIndex)
-                    binding.tvHomeHealth.changeTextColor(color = COLOR_ORANGE)
-                    prevCheckedIndex = CATEGORY_HEALTH_INDEX
-                }
-                CATEGORY_BOOKS_INDEX -> {
-                    changePreviousTextColor(index = prevCheckedIndex)
-                    binding.tvHomeBooks.changeTextColor(color = COLOR_ORANGE)
-                    prevCheckedIndex = CATEGORY_BOOKS_INDEX
+            appbarMain.tvLocation.setOnClickListener {
+                findNavController().navigate(NavR.id.action_homeFragment_to_mapFragment)
+            }
+
+            radiogroupHome.setOnCheckedChangeListener { radioGroup, buttonId ->
+
+                val buttonIndex = radioGroup.indexOfChild(view?.findViewById(buttonId))
+                when (buttonIndex) {
+                    CATEGORY_PHONES_INDEX -> {
+                        changePreviousTextColor(index = prevCheckedIndex)
+                        tvHomePhones.changeTextColor(color = COLOR_ORANGE)
+                        prevCheckedIndex = CATEGORY_PHONES_INDEX
+                    }
+                    CATEGORY_COMPUTER_INDEX -> {
+                        changePreviousTextColor(index = prevCheckedIndex)
+                        tvHomeComputer.changeTextColor(color = COLOR_ORANGE)
+                        prevCheckedIndex = CATEGORY_COMPUTER_INDEX
+                    }
+                    CATEGORY_HEALTH_INDEX -> {
+                        changePreviousTextColor(index = prevCheckedIndex)
+                        tvHomeHealth.changeTextColor(color = COLOR_ORANGE)
+                        prevCheckedIndex = CATEGORY_HEALTH_INDEX
+                    }
+                    CATEGORY_BOOKS_INDEX -> {
+                        changePreviousTextColor(index = prevCheckedIndex)
+                        tvHomeBooks.changeTextColor(color = COLOR_ORANGE)
+                        prevCheckedIndex = CATEGORY_BOOKS_INDEX
+                    }
                 }
             }
         }
+
     }
 
     private fun changePreviousTextColor(index: Int) {

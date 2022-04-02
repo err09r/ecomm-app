@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--suppress ALL -->
+<?xml version="1.0" encoding="utf-8"?><!--suppress ALL -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,6 +16,9 @@
         <action
             android:id="@+id/action_detailFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
+        <deepLink
+            android:id="@+id/deepLink4"
+            app:uri="mysite.com/detail" />
     </fragment>
 
     <fragment
@@ -27,6 +29,9 @@
         <action
             android:id="@+id/action_cartFragment_to_homeFragment"
             app:destination="@id/home_nav_graph" />
+        <deepLink
+            android:id="@+id/deepLink3"
+            app:uri="mysite.com/cart" />
     </fragment>
 
     <navigation
@@ -47,19 +52,44 @@
             <action
                 android:id="@+id/action_homeFragment_to_cartFragment"
                 app:destination="@id/cartFragment" />
+            <action
+                android:id="@+id/action_homeFragment_to_mapFragment"
+                app:destination="@id/mapFragment"
+                app:enterAnim="@anim/slide_in_up"
+                app:exitAnim="@anim/slide_out_up"
+                app:popEnterAnim="@anim/slide_in_up"
+                app:popExitAnim="@anim/slide_out_up" />
+            <deepLink
+                android:id="@+id/deepLink"
+                app:uri="mysite.com/home" />
         </fragment>
 
         <dialog
             android:id="@+id/filterFragment"
             android:name="com.app.ecommerceapp.presentation.screens.FilterFragment"
             android:label="FilterFragment"
-            app:enterAnim="@anim/slide_up"
-            app:exitAnim="@anim/slide_down"
             tools:layout="@layout/fragment_filter">
             <action
-                android:id="@+id/action_filterFragment_to_mainFragment"
+                android:id="@+id/action_filterFragment_to_homeFragment"
                 app:destination="@id/homeFragment" />
         </dialog>
+
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.app.ecommerceapp.presentation.screens.MapFragment"
+            android:label="MapFragment"
+            tools:layout="@layout/fragment_map">
+            <action
+                android:id="@+id/action_mapFragment_to_homeFragment"
+                app:destination="@id/homeFragment"
+                app:enterAnim="@anim/slide_in_up"
+                app:exitAnim="@anim/slide_out_up"
+                app:popEnterAnim="@anim/slide_in_up"
+                app:popExitAnim="@anim/slide_out_up" />
+            <deepLink
+                android:id="@+id/deepLink2"
+                app:uri="mysite.com/map" />
+        </fragment>
 
     </navigation>
 
