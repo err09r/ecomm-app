@@ -1,6 +1,7 @@
 package com.app.ecommerceapp.presentation.screens
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
@@ -71,60 +72,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val mapFragment =
-            childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-
+        setUpMapFragment()
         lastLocation?.let { moveCameraToUser(it) }
-
-        binding.appbarMap.btnBack.setOnClickListener {
-            findNavController().navigate(NavR.id.action_mapFragment_to_homeFragment)
-        }
-
-        binding.fab.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(
-                    requireContext(),
-                    requiredPermissions[0]
-                ) != PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(
-                    requireContext(),
-                    requiredPermissions[1]
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                resultLauncher.launch(requiredPermissions)
-                return@setOnClickListener
-            }
-
-            lastLocation?.let { moveCameraToUser(it) }
-
-            val locationManager =
-                requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
-
-            val isGpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
-
-            if (!isGpsEnabled) {
-                Toast.makeText(
-                    requireContext(),
-                    R.string.location_disabled_text,
-                    Toast.LENGTH_LONG
-                )
-                    .show()
-                return@setOnClickListener
-            }
-
-            val fusedLocationProviderClient =
-                LocationServices.getFusedLocationProviderClient(requireContext())
-
-            fusedLocationProviderClient.lastLocation.addOnSuccessListener { location ->
-                if (location != null) {
-                    lastLocation = location
-                    map.isMyLocationEnabled = true
-                    moveCameraToUser(location)
-                } else {
-                    reloadFragment()
-                }
-            }
-        }
+        initListeners()
     }
 
     override fun onMapReady(map: GoogleMap) {
@@ -150,6 +100,69 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         super.onDestroyView()
         _binding = null
     }
+
+    private fun initListeners() {
+        binding.appbarMap.btnBack.setOnClickListener {
+            findNavController().navigate(NavR.id.action_mapFragment_to_homeFragment)
+        }
+
+        binding.fab.setOnClickListener {
+            if (!checkArePermissionsGranted()) {
+                resultLauncher.launch(requiredPermissions)
+                return@setOnClickListener
+            }
+
+            lastLocation?.let { moveCameraToUser(it) }
+
+            if (!checkIsLocationEnabled()) {
+                Toast.makeText(
+                    requireContext(),
+                    R.string.location_disabled_text,
+                    Toast.LENGTH_LONG
+                ).show()
+                return@setOnClickListener
+            }
+
+            setUpLocationListener()
+        }
+    }
+
+    private fun setUpMapFragment() {
+        val mapFragment =
+            childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun setUpLocationListener() {
+        val fusedLocationProviderClient =
+            LocationServices.getFusedLocationProviderClient(requireContext())
+
+        fusedLocationProviderClient.lastLocation.addOnSuccessListener { location ->
+            if (location != null) {
+                lastLocation = location
+                map.isMyLocationEnabled = true
+                moveCameraToUser(location)
+            } else {
+                reloadFragment()
+            }
+        }
+    }
+
+    private fun checkIsLocationEnabled(): Boolean {
+        val locationManager =
+            requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+    }
+
+    private fun checkArePermissionsGranted(): Boolean =
+        (ContextCompat.checkSelfPermission(
+            requireContext(),
+            requiredPermissions[0]
+        ) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(
+            requireContext(),
+            requiredPermissions[1]
+        ) == PackageManager.PERMISSION_GRANTED)
 
     private fun GoogleMap.generateMarkers(locations: Map<String, LatLng>) {
         locations.forEach {
