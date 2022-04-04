@@ -8,7 +8,7 @@
 - **App architecture:** Clean Architecture, Feature-modules, MVVM
 - Coroutines, Flow
 - **Images:** Glide
-- **UI**: Bottom Navigation Bar, Bottom Sheet Dialog, ViewPager2, RecyclerView, TabLayout 
+- **UI**: BottomNavigationBar, BottomSheetDialog, ViewPager2, RecyclerView, TabLayout 
 - **Other:** Firebase Cloud Messaging, Google Maps, Deeplinks
 
 ### Preview
