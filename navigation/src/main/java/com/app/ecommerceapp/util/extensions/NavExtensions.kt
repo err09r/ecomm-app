@@ -6,7 +6,7 @@ import androidx.navigation.fragment.findNavController
 fun Fragment.reloadFragment() {
     this.findNavController().apply {
         currentDestination?.let { destination ->
-            popBackStack(destinationId = destination.id, inclusive = false)
+            popBackStack()
             navigate(resId = destination.id)
         }
     }
