@@ -86,7 +86,7 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
     // FCM
-    implementation 'com.google.firebase:firebase-messaging:23.0.2'
+    implementation 'com.google.firebase:firebase-messaging:23.0.3'
 
     // Room
     implementation "androidx.room:room-runtime:$room_version"
