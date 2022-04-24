@@ -17,7 +17,7 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val getDetailContentUseCase: GetDetailContentUseCase
+    getDetailContentUseCase: GetDetailContentUseCase
 ) : ViewModel() {
 
     private val coroutineContext: CoroutineContext by lazy {

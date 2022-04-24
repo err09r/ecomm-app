@@ -2,13 +2,12 @@ package com.app.ecommerceapp.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.ecommerceapp.util.constants.CommonConstants.DEFAULT_ERROR_MSG
 import com.app.ecommerceapp.domain.models.CartContent
 import com.app.ecommerceapp.domain.usecases.GetCartContentByIdUseCase
+import com.app.ecommerceapp.util.constants.CommonConstants.DEFAULT_ERROR_MSG
 import com.app.ecommerceapp.util.helpers.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -18,7 +17,7 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class CartViewModel @Inject constructor(
-    private val getCartContentByIdUseCase: GetCartContentByIdUseCase
+    getCartContentByIdUseCase: GetCartContentByIdUseCase
 ) : ViewModel() {
 
     private val coroutineContext: CoroutineContext by lazy {

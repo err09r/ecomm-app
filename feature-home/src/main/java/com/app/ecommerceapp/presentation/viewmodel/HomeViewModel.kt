@@ -2,9 +2,9 @@ package com.app.ecommerceapp.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.ecommerceapp.util.constants.CommonConstants.DEFAULT_ERROR_MSG
 import com.app.ecommerceapp.domain.models.HomeContent
 import com.app.ecommerceapp.domain.usecases.GetHomeContentUseCase
+import com.app.ecommerceapp.util.constants.CommonConstants.DEFAULT_ERROR_MSG
 import com.app.ecommerceapp.util.helpers.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -17,7 +17,7 @@ import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getHomeContentUseCase: GetHomeContentUseCase
+    getHomeContentUseCase: GetHomeContentUseCase
 ) : ViewModel() {
 
     private val coroutineContext: CoroutineContext by lazy {
